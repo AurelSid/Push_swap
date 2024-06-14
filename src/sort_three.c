@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:03:47 by asideris          #+#    #+#             */
-/*   Updated: 2024/05/29 17:04:07 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:43:36 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,22 @@ void	ft_sort_three(Node **top)
 	first = (*top)->value;
 	second = (*top)->next->value;
 	third = (*top)->next->next->value;
-	if (first > second && second > third && third > first)
+	if (first < second && second < third)
 		return ;
+	if (first > second && second < third && third > first)
+		sa(top);
 	if (first < second && second > third && third > first)
 	{
-		rra(*&top);
-		sa(*&top);
+		rra(top);
+		sa(top);
 	}
-	if (first > second && second < third && third > first)
-		sa(*&top);
 	if (first < second && second > third && third < first)
-		rra(*&top);
-	if (first > second && second > third && third < first)
+		rra(top);
+	if (first > second && second > third)
 	{
-		sa(*&top);
-		rra(*&top);
+		sa(top);
+		rra(top);
 	}
 	if (first > second && second < third && third < first)
-		ra(*&top);
+		ra(top);
 }

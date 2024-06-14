@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 17:28:23 by asideris          #+#    #+#             */
-/*   Updated: 2024/05/31 14:10:22 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:04:50 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PUSH_SWAP_H
 
 # include "../Libft/libft.h"
+# include "../ft_printf/ft_printf.h"
+# include <limits.h>
+# include <stdbool.h>
 # include <stdlib.h>
 
 typedef struct Node
@@ -22,38 +25,59 @@ typedef struct Node
 	int			value;
 	int			pos;
 	int			cost;
+	bool		cheapest;
 	struct Node	*next;
 	struct Node	*prev;
 	struct Node	*best_friend;
 }				Node;
-void			ft_populate(Node **stack_a_top, int argc, char **argv);
-void			ft_sort(Node **stack_a_top, Node **stack_b_top, int len);
-void			sa(struct Node **top);
-void			ft_push_node(struct Node **top, int value);
+long			ft_atol(const char *str);
+int				ft_populate(struct Node **stack_a_top, int argc, char **argv);
+void			ft_add_node_to_stack(Node **stack, int n);
+void			ft_sort_stack(Node **stack_a, Node **stack_b);
 void			ft_print_list(Node *lst);
-void			**ft_get_args(struct Node **top, char **argv);
 struct Node		*ft_create_node(int value);
-void			pb(struct Node **topa, struct Node **topb);
+Node			*ft_find_last(Node *top);
+Node			*ft_find_smallest_cost(Node *head);
+void			ft_set_targets_b(Node *a, Node *b);
+void			ft_set_targets_a(Node *a, Node *b);
+void			ft_final_sort(Node **top);
+int				ft_error_syntax(char *str_n);
+void			ft_set_cheapest(Node *stack_top);
+void			ft_init_nodes_a(Node **a, Node **b);
+void			ft_init_nodes_b(Node **a, Node **b);
+void			ft_push_a_to_b(Node **a, Node **b);
+void			ft_push_b_to_a(Node **a, Node **b);
+void			ft_set_to_top(Node **top, Node **node, char stack_id);
+
+
+//
+void			sa(struct Node **top);
+void			pa(struct Node **a, struct Node **b);
 void			ra(struct Node **topa);
 void			rra(struct Node **topa);
+void			sb(struct Node **top);
+void			pb(struct Node **a, struct Node **b);
+void			rb(struct Node **topa);
+void			rrb(struct Node **topa);
+void			ft_rot_both(Node **a, Node **b);
+void			ft_rev_rot_both(Node **a, Node **b);
+//
 int				ft_listlen(struct Node *lst);
-// int				countSmaller(Node *head, Node *current, int value);
-// void			updatePositions(Node *head, Node *current);
 void			ft_print_list(struct Node *lst);
-int				ft_get_median(struct Node *top);
-void			ft_push_median(Node **top_a, Node **top_b);
-
-void			ft_sort_five(Node **top_a, Node **top_b);
-Node			*ft_find_smallest(Node *top_a);
+double			ft_get_median(struct Node *top);
+Node			*ft_find_max(Node *stack);
+Node			*ft_find_min(Node *stack);
+//
 void			ft_sort_three(Node **top);
-void			ft_find_best_friend(Node **top_a, Node **node_b);
 void			set_index(Node **stack);
-int				ft_find_stack_center(Node *stack);
-void			ft_find_all_friends(Node **stack_a, Node **stack_b);
-void			ft_set_stack_costs(Node **stack);
-Node			*ft_find_smallest_cost(Node *stack_b_top);
-void			ft_push_cheapest(Node **stack_a_top, Node **stack_b_top);
-void			ft_set_to_top(Node **top, Node **node);
-void			ft_find_smallest_value(Node **stack_a_top);
+void			ft_set_stack_costs(Node *a, Node *b);
+//
+int				ft_is_valid_int(int value);
+int				ft_has_duplicates(struct Node *start);
+int				ft_all_checks(Node *start);
+int				ft_get_args(struct Node **top, char **argv);
+int				ft_sort_two(int argc, char **argv, Node **stack);
+//
+bool			ft_check_sorted(Node *stack_top);
 
 #endif
