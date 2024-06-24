@@ -6,37 +6,38 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 15:13:08 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/11 17:44:41 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:47:47 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-Node	*ft_find_min(Node *stack)
+t_node	*ft_find_min(t_node *stack)
 {
-	int min_value;
-	Node *min_node;
-	Node *curr;
+	int		min_value;
+	t_node	*min_t_node;
+	t_node	*curr;
 
 	curr = stack;
 	min_value = stack->value;
-	min_node = stack;
+	min_t_node = stack;
 	while (curr)
 	{
 		if (curr->value < min_value)
 		{
 			min_value = curr->value;
-			min_node = curr;
+			min_t_node = curr;
 		}
 		curr = curr->next;
 	}
-	return (min_node);
+	return (min_t_node);
 }
-Node	*ft_find_max(Node *stack)
+
+t_node	*ft_find_max(t_node *stack)
 {
-	int max_value;
-	Node *max_node;
-	Node *curr;
+	int		max_value;
+	t_node	*max_node;
+	t_node	*curr;
 
 	curr = stack;
 	max_value = stack->value;

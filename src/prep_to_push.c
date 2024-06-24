@@ -6,14 +6,14 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 19:48:37 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/14 14:30:19 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:46:00 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-double	ft_get_median(struct Node *top)
+double	ft_get_median(t_node *top)
 {
 	int			sum;
 	double		result;
@@ -36,16 +36,16 @@ double	ft_get_median(struct Node *top)
 	result = result / i;
 	return (result);
 }
-void	set_index(Node **stack)
+
+void	set_index(t_node **stack)
 {
-	int	i;
-	int	median;
-	int j;
-	Node *curr;
-	
+	int		i;
+	int		median;
+	int		j;
+	t_node	*curr;
+
 	i = 0;
 	j = 0;
-
 	curr = *stack;
 	median = ft_listlen(**&stack) / 2;
 	while (j < ft_listlen(**&stack))

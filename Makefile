@@ -34,6 +34,7 @@ SRCS                = main.c \
 					  sort_stack.c \
 					  sort_three.c\
 					  ft_atol.c\
+					  check_duplicates.c\
 
 SRC                 = $(addprefix $(SRC_DIR), $(SRCS))
 OBJ                 = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))

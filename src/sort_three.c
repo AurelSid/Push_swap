@@ -6,14 +6,14 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 17:03:47 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/10 15:43:36 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:04:54 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-void	ft_sort_three(Node **top)
+void	ft_sort_three(t_node **top)
 {
 	int	first;
 	int	second;

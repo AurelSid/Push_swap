@@ -6,15 +6,15 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 16:45:13 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/10 16:54:22 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:47:17 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-Node	*ft_find_smallest_cost(Node *head)
+t_node	*ft_find_smallest_cost(t_node *head)
 {
-	Node *curr;
+	t_node	*curr;
 
 	curr = head;
 	if (!curr)

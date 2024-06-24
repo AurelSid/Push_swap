@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 18:31:34 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/13 18:57:13 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:37:55 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,6 @@ int	ft_all_valid_ints(struct Node *start)
 	return (0);
 }
 
-int	ft_has_duplicates(struct Node *start)
-{
-	int			numbers[ft_listlen(start)];
-	int			count;
-	struct Node	*current;
-
-	if (!start)
-		return (0);
-	count = 0;
-	current = start;
-	while (current != NULL)
-	{
-		for (int i = 0; i < count; i++)
-		{
-			if (numbers[i] == current->value)
-			{
-				return (1);
-			}
-		}
-		numbers[count++] = current->value;
-		current = current->next;
-	}
-	return (0); // No duplicates found
-}
 int	ft_error_syntax(char *str_n)
 {
 	if (!(*str_n == '+' || *str_n == '-' || (*str_n >= '0' && *str_n <= '9')))
@@ -75,7 +51,8 @@ int	ft_error_syntax(char *str_n)
 	}
 	return (0);
 }
-int	ft_all_checks(Node *start)
+
+int	ft_all_checks(t_node *start)
 {
 	if (ft_has_duplicates(start) == 1)
 		return (1);

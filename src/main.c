@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 15:14:00 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/14 13:14:17 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:37:07 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ int	main(int argc, char **argv)
 	ft_final_sort(&stack_a_top);
 	return (0);
 }
-void	ft_final_sort(Node **top)
+
+void	ft_final_sort(t_node **top)
 {
-	Node	*min;
+	t_node	*min;
 
 	min = ft_find_min(*top);
 	set_index(top);
@@ -54,7 +55,8 @@ void	ft_final_sort(Node **top)
 		}
 	}
 }
-int	ft_sort_two(int argc, char **argv, Node **stack)
+
+int	ft_sort_two(int argc, char **argv, t_node **stack)
 {
 	int	value1;
 	int	value2;

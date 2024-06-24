@@ -6,14 +6,14 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:41:58 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/10 13:49:12 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:45:40 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-void	ft_set_to_top(Node **top, Node **node, char stack_id)
+void	ft_set_to_top(t_node **top, t_node **node, char stack_id)
 {
 	while (*node != *top)
 	{

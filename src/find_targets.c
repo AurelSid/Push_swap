@@ -6,18 +6,18 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:14:38 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/10 15:30:04 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:46:47 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-void	set_target_a(Node *a, Node *b)
+void	set_target_a(t_node *a, t_node *b)
 {
-	Node *current_b;
-	Node *best_friend;
-	long best_match_index;
+	t_node	*current_b;
+	t_node	*best_friend;
+	long	best_match_index;
 
 	while (a)
 	{
@@ -25,7 +25,8 @@ void	set_target_a(Node *a, Node *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->value < a->value && current_b->value > best_match_index)
+			if (current_b->value < a->value
+				&& current_b->value > best_match_index)
 			{
 				best_match_index = current_b->value;
 				best_friend = current_b;

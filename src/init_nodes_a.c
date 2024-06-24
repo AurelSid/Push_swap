@@ -6,25 +6,26 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:55:40 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/12 18:33:38 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:37:14 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-void	ft_init_nodes_a(Node **a, Node **b)
+void	ft_init_nodes_a(t_node **a, t_node **b)
 {
 	set_index(&*a);
 	set_index(&*b);
 	ft_set_targets_a(*a, *b);
-	ft_set_stack_costs(*a,*b);
+	ft_set_stack_costs(*a, *b);
 	ft_set_cheapest(**&a);
 }
-void	ft_set_targets_a(Node *a, Node *b)
+
+void	ft_set_targets_a(t_node *a, t_node *b)
 {
-	Node	*current_b;
-	Node	*best_friend;
+	t_node	*current_b;
+	t_node	*best_friend;
 	long	best_match_index;
 
 	while (a)
@@ -49,10 +50,10 @@ void	ft_set_targets_a(Node *a, Node *b)
 	}
 }
 
-void	ft_set_cheapest(Node *stack_top)
+void	ft_set_cheapest(t_node *stack_top)
 {
 	long	cheapest_value;
-	Node	*cheapest_node;
+	t_node	*cheapest_node;
 
 	if (!stack_top)
 		return ;

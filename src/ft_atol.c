@@ -6,7 +6,7 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 17:22:29 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/13 17:26:57 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:04:41 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ long	numberet(const char *str, int i, int signe)
 	{
 		result = (result * 10) + (str[i] - '0');
 		if ((result * signe) > INT_MAX)
-			return (LONG_MAX); 
+			return (LONG_MAX);
 		else if ((result * signe) < INT_MIN)
-			return (LONG_MIN); 
+			return (LONG_MIN);
 		i++;
 	}
 	return ((long)result * signe);

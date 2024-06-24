@@ -6,18 +6,18 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 17:10:46 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/13 14:04:46 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:04:29 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-void	sa(struct Node **top)
+void	sa(t_node **top)
 {
-	struct Node	*second;
-	struct Node	*first;
-	struct Node	*third;
+	t_node	*second;
+	t_node	*first;
+	t_node	*third;
 
 	first = (*top);
 	second = (*top)->next;
@@ -31,9 +31,9 @@ void	sa(struct Node **top)
 	ft_printf("sa\n");
 }
 
-void	pa(struct Node **a, struct Node **b)
+void	pa(t_node **a, t_node **b)
 {
-	Node	*push_node;
+	t_node	*push_node;
 
 	if (!*b)
 		return ;
@@ -53,12 +53,12 @@ void	pa(struct Node **a, struct Node **b)
 		push_node->next->prev = push_node;
 		*a = push_node;
 	}
-		ft_printf("pa\n");
+	ft_printf("pa\n");
 }
 
-void	ra(struct Node **topa)
+void	ra(t_node **topa)
 {
-	Node	*last_node;
+	t_node	*last_node;
 
 	if (!*topa || !(*topa)->next)
 		return ;
@@ -71,18 +71,17 @@ void	ra(struct Node **topa)
 	ft_printf("ra\n");
 }
 
-void rra(Node **topa) {
-    Node *last;
+void	rra(t_node **topa)
+{
+	t_node	*last;
 
-    if (!*topa || !(*topa)->next)
-        return;
-
-    last = ft_find_last(*topa);
-    last->prev->next = NULL;
-    last->next = *topa;
-    last->prev = NULL;
-    *topa = last;
-    last->next->prev = last;
-
-    ft_printf("rra\n");
+	if (!*topa || !(*topa)->next)
+		return ;
+	last = ft_find_last(*topa);
+	last->prev->next = NULL;
+	last->next = *topa;
+	last->prev = NULL;
+	*topa = last;
+	last->next->prev = last;
+	ft_printf("rra\n");
 }

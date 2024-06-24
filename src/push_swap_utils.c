@@ -6,17 +6,17 @@
 /*   By: asideris <asideris@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/23 17:22:14 by asideris          #+#    #+#             */
-/*   Updated: 2024/06/13 14:05:28 by asideris         ###   ########.fr       */
+/*   Updated: 2024/06/24 14:04:50 by asideris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 #include <stdio.h>
 
-int	ft_listlen(struct Node *lst)
+int	ft_listlen(t_node *lst)
 {
-	int			i;
-	struct Node	*current;
+	int		i;
+	t_node	*current;
 
 	current = lst;
 	i = 0;
@@ -28,9 +28,9 @@ int	ft_listlen(struct Node *lst)
 	return (i);
 }
 
-void	ft_print_list(struct Node *lst)
+void	ft_print_list(t_node *lst)
 {
-	struct Node	*tmp;
+	t_node	*tmp;
 
 	if (lst == NULL)
 	{
@@ -41,10 +41,7 @@ void	ft_print_list(struct Node *lst)
 	while (tmp)
 	{
 		ft_printf("node: %-8d   pos: %-1d cost: %-1d over middle: %-1d\n",
-				tmp->value,
-				tmp->pos,
-				tmp->cost,
-				tmp->over_middle);
+			tmp->value, tmp->pos, tmp->cost, tmp->over_middle);
 		tmp = tmp->next;
 	}
 	ft_printf("\n");
